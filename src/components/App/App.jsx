@@ -2,10 +2,15 @@ import { Toaster } from 'react-hot-toast';
 import HeroForm from 'components/HeroForm/HeroForm';
 import HeroList from 'components/HeroList/HeroList';
 import { useFetchHeros } from 'hooks/useFetchHeros';
+import { useDeleteHero } from 'hooks/useDeleteHero';
+
 import { Conteiner } from './App.styled';
 
 export default function App() {
-  const { superhero } = useFetchHeros();
+  const { heros } = useFetchHeros();
+  const { deleteHero } = useDeleteHero();
+
+  console.log(heros);
   // const formSubmit = ({ nickname, images }) => {
   //   setHeros(prevHeros => {
   //     const newHero = {
@@ -33,8 +38,8 @@ export default function App() {
     <Conteiner>
       <h1>Suoperhero Database</h1>
       {/* <HeroForm onSubmit={} /> */}
-      <h1>Heros</h1>
-      {superhero && <HeroList superhero={superhero} />}
+      <h1>Superheros list</h1>
+      {heros && <HeroList heros={heros} onDelete={deleteHero} />}
       <Toaster position="top-right" />
     </Conteiner>
   );

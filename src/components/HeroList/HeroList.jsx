@@ -3,14 +3,14 @@ import Hero from 'components/Hero/Hero';
 
 const HeroList = ({ heros, onDelete }) => (
   <List>
-    {heros.map(({ id, nickname, images }) => {
+    {heros.map(({ _id, nickname, images }) => {
       return (
-        <li key={id}>
+        <li key={_id}>
           <Hero
-            id={id}
+            id={_id}
             nickname={nickname}
             images={images}
-            onDelete={() => onDelete(id)}
+            onDelete={() => onDelete(_id)}
           />
         </li>
       );

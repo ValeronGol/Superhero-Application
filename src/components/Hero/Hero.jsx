@@ -1,12 +1,12 @@
 import { Conteiner, Info, Img, Button } from './Hero.styled';
 
-const Hero = ({ nickname, images, id, onDelete }) => (
+const Hero = ({ nickname, images, _id, onDelete }) => (
   <Conteiner>
     <Info>
       {`${nickname}`}
       <Img src={images} alt={nickname} />
     </Info>
-    <Button data-id={id} onClick={onDelete}>
+    <Button data-id={_id} onClick={onDelete}>
       Delete
     </Button>
   </Conteiner>
