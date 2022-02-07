@@ -1,61 +1,54 @@
-import React, { useState } from 'react';
-import { ConteinerForm, Label, Button, Input } from './HeroForm.styled';
+import { Formik, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+import {
+  ConteinerForm,
+  Label,
+  Input,
+  Button,
+  ErrorName,
+  ErrorImg,
+} from './HeroForm.styled';
+import { useCreateHero } from 'hooks/useCreateHero';
 
-export default function HeroForm(props) {
-  const [nickname, setNickname] = useState('');
-  const [images, setImages] = useState('');
+const validationSchema = Yup.object({
+  nickname: Yup.string().required(),
+  images: Yup.string().url(),
+});
 
-  const heros = {
-    nickname,
-    images,
-  };
-
-  const handleChangeNickname = event => {
-    setNickname(event.currentTarget.value);
-  };
-
-  const handleChangeImage = event => {
-    setImages(event.currentTarget.value);
-  };
-
-  const handleSubmit = event => {
-    event.preventDefault();
-
-    props.onSubmit(heros);
-
-    resetState();
-  };
-
-  const resetState = () => {
-    setNickname('');
-    setImages('');
-  };
+export default function HeroForm() {
+  const { createHero } = useCreateHero();
 
   return (
-    <ConteinerForm>
-      <form onSubmit={handleSubmit}>
-        <Label>
-          Name
-          <Input
-            type="text"
-            name="name"
-            required
-            onChange={handleChangeNickname}
-            value={nickname}
-          />
-        </Label>
-        <Label>
-          Images
-          <Input
-            ttype="image"
-            name="image"
-            width="50"
-            onChange={handleChangeImage}
-            value={images}
-          />
-        </Label>
-        <Button type="submit">Add contact</Button>
-      </form>
-    </ConteinerForm>
+    <Formik
+      initialValues={{ nickname: '', images: '' }}
+      validationSchema={validationSchema}
+      onSubmit={(values, { resetForm }) => {
+        createHero(values);
+        resetForm({ values: '' });
+      }}
+    >
+      {({ isValid, dirty }) => (
+        <ConteinerForm autoComplete="off">
+          <Label htmlFor="nickname">nickname</Label>
+
+          <Input name="nickname" type="text" />
+
+          <ErrorMessage name="nickname">
+            {msg => <ErrorName>{msg}</ErrorName>}
+          </ErrorMessage>
+
+          <Label htmlFor="images">images URL</Label>
+
+          <Input name="images" type="text" />
+
+          <ErrorMessage name="images">
+            {msg => <ErrorImg>{msg}</ErrorImg>}
+          </ErrorMessage>
+          <Button type="submit" disabled={!isValid && !dirty}>
+            Create Hero
+          </Button>
+        </ConteinerForm>
+      )}
+    </Formik>
   );
 }

@@ -12,7 +12,7 @@ export const useDeleteHero = () => {
   const { mutateAsync } = useMutation(deleteHero, {
     onSuccess() {
       queryClient.invalidateQueries('/heros');
-      toast.success('Heros deleted');
+      toast.success('Hero deleted');
     },
   });
   return {
