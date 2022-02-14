@@ -1,43 +1,32 @@
-import { useQuery } from 'react-query';
 import { useState } from 'react';
-import toast from 'react-hot-toast';
-import { fetchHeros } from 'helpers/fetchHeros';
+import { useFetchHeros } from 'hooks/useFetchHeros';
 import { useDeleteHero } from 'hooks/useDeleteHero';
 import HeroList from 'components/HeroList/HeroList';
+import Button from 'components/Button/Button';
 
 const HerosPagination = () => {
   const [page, setPage] = useState(1);
   const { deleteHero } = useDeleteHero();
-  const { isLoading, data, isError, error, isFetching } = useQuery(
-    ['/hero', page],
-    () => fetchHeros(page),
-    {
-      onSuccess() {
-        toast.success('Heros loaded');
-      },
-    },
-  );
+  const { isLoading, data, isError, error, isFetching } = useFetchHeros(page);
   return (
     <div>
       {isLoading && <div>Loading...</div>}{' '}
       {isError && <div>Error: {error.message}</div>}
       {data && <HeroList heros={data} onDelete={deleteHero} />}
-      <button
+      <Button
+        text="Prev Page"
         disabled={page === 1}
         onClick={() => {
           setPage(old => old - 1);
         }}
-      >
-        Prev Page
-      </button>
-      <button
+      />
+      <Button
+        text="Next Page"
         disabled={!data?.length || data?.length < 5}
         onClick={() => {
           setPage(old => old + 1);
         }}
-      >
-        Next Page
-      </button>
+      />
       {isFetching ? <span> Loading...</span> : null}
     </div>
   );

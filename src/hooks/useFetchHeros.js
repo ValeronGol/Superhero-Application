@@ -1,27 +1,23 @@
-import { useRef } from 'react';
 import { useQuery } from 'react-query';
-import axios from 'axios';
 import toast from 'react-hot-toast';
+import { fetchHeros } from 'helpers/fetchHeros';
 
-axios.defaults.baseURL = 'https://superheros-app-valeron.herokuapp.com/api/';
-
-const fetchHeros = async () => {
-  const response = await axios.get('/superhero');
-  return response.data.data.result;
-};
-
-export const useFetchHeros = () => {
-  const hasFetched = useRef(false);
-  const { data } = useQuery('/heros', fetchHeros, {
-    onSuccess() {
-      if (!hasFetched.current) {
+export const useFetchHeros = page => {
+  const { isLoading, data, isError, error, isFetching } = useQuery(
+    ['/hero', page],
+    () => fetchHeros(page),
+    {
+      onSuccess() {
         toast.success('Heros loaded');
-        hasFetched.current = true;
-      }
+      },
     },
-  });
+  );
 
   return {
-    heros: data,
+    data,
+    isLoading,
+    isError,
+    error,
+    isFetching,
   };
 };
