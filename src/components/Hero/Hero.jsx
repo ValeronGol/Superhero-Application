@@ -1,14 +1,13 @@
-import { Conteiner, Info, Img, Button } from './Hero.styled';
+import { Conteiner, Info, Img } from './Hero.styled';
+import Btn from 'components/Btn/Btn';
 
-const Hero = ({ nickname, images, _id, onDelete }) => (
+const Hero = ({ nickname, images, onDelete }) => (
   <Conteiner>
     <Info>
       {`${nickname}`}
       <Img src={images} alt={nickname} />
     </Info>
-    <Button data-id={_id} onClick={onDelete}>
-      Delete
-    </Button>
+    <Btn text="Delete" onClick={onDelete} />
   </Conteiner>
 );
 

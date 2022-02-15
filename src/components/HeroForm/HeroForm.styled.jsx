@@ -4,26 +4,9 @@ import { Field, Form } from 'formik';
 export const ConteinerForm = styled(Form)`
   width: 300px;
   padding: 20px;
-
   border: 1px solid #477405;
 `;
 
-export const Button = styled.button`
-  display: block;
-  margin-top: 20px;
-  background-color: #0a0131ab;
-  color: white;
-  border-radius: 7px;
-  border-color: #201068ab;
-  cursor: pointer;
-  transition-delay: 250ms;
-  transition-timing-function: cubic-bezier(0.29, 1.01, 1, -0.68);
-  &:hover {
-    background-color: #5b5bbee6;
-    color: #0a0131ab;
-    border-color: #0a0131ab;
-  }
-`;
 export const Label = styled.label`
   display: flex;
   flex-direction: column;
@@ -69,4 +52,7 @@ export const ErrorImg = styled.div`
   line-height: 1.2;
   letter-spacing: 0.04em;
   color: #eb5757;
+`;
+export const BtnContainer = styled.div`
+  margin-top: 20px;
 `;
