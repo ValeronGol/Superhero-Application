@@ -8,9 +8,10 @@ export const useFetchHeros = page => {
   const hasFetched = useRef(false);
 
   const { isLoading, data, isError, error, isFetching } = useQuery(
-    ['/hero', page],
+    ['/heros', page],
     () => fetchHeros(page),
     {
+      keepPreviousData: true,
       onSuccess() {
         if (!hasFetched.current) {
           toast.success('Heros loaded');

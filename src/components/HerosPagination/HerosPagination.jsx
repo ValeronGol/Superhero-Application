@@ -4,15 +4,17 @@ import { useDeleteHero } from 'hooks/useDeleteHero';
 import HeroList from 'components/HeroList/HeroList';
 import Btn from 'components/Btn/Btn';
 import { Container } from './HerosPagination.styled';
+
 const HerosPagination = () => {
   const [page, setPage] = useState(1);
   const { deleteHero } = useDeleteHero();
   const { isLoading, data, isError, error, isFetching } = useFetchHeros(page);
+
   return (
     <Container>
       {isLoading && <div>Loading...</div>}{' '}
       {isError && <div>Error: {error.message}</div>}
-      {data && <HeroList heros={data} onDelete={deleteHero} />}{' '}
+      {data && <HeroList heros={data} onDelete={deleteHero} />}
       <Btn
         text="Prev Page"
         disabled={page === 1}
