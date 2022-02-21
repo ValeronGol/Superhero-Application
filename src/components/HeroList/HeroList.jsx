@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { List } from './HerotList.styled';
 import Hero from 'components/Hero/Hero';
 
@@ -5,14 +6,14 @@ const HeroList = ({ heros, onDelete }) => (
   <List>
     {heros.map(({ _id, nickname, images }) => {
       return (
-        <li key={_id}>
+        <Link key={_id} to={`/${_id}}`}>
           <Hero
             id={_id}
             nickname={nickname}
             images={images}
             onDelete={() => onDelete(_id)}
           />
-        </li>
+        </Link>
       );
     })}
   </List>
