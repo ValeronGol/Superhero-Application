@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/superhero-application/static/css/main.4d534e0f.chunk.css",
-    "main.js": "/superhero-application/static/js/main.98e8e3a4.chunk.js",
-    "main.js.map": "/superhero-application/static/js/main.98e8e3a4.chunk.js.map",
+    "main.css": "/superhero-application/static/css/main.228ed638.chunk.css",
+    "main.js": "/superhero-application/static/js/main.12e14255.chunk.js",
+    "main.js.map": "/superhero-application/static/js/main.12e14255.chunk.js.map",
     "runtime-main.js": "/superhero-application/static/js/runtime-main.e51c347f.js",
     "runtime-main.js.map": "/superhero-application/static/js/runtime-main.e51c347f.js.map",
-    "static/js/2.e39ae0f1.chunk.js": "/superhero-application/static/js/2.e39ae0f1.chunk.js",
-    "static/js/2.e39ae0f1.chunk.js.map": "/superhero-application/static/js/2.e39ae0f1.chunk.js.map",
+    "static/js/2.45ee0387.chunk.js": "/superhero-application/static/js/2.45ee0387.chunk.js",
+    "static/js/2.45ee0387.chunk.js.map": "/superhero-application/static/js/2.45ee0387.chunk.js.map",
     "index.html": "/superhero-application/index.html",
-    "static/css/main.4d534e0f.chunk.css.map": "/superhero-application/static/css/main.4d534e0f.chunk.css.map",
-    "static/js/2.e39ae0f1.chunk.js.LICENSE.txt": "/superhero-application/static/js/2.e39ae0f1.chunk.js.LICENSE.txt"
+    "static/css/main.228ed638.chunk.css.map": "/superhero-application/static/css/main.228ed638.chunk.css.map",
+    "static/js/2.45ee0387.chunk.js.LICENSE.txt": "/superhero-application/static/js/2.45ee0387.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.e51c347f.js",
-    "static/js/2.e39ae0f1.chunk.js",
-    "static/css/main.4d534e0f.chunk.css",
-    "static/js/main.98e8e3a4.chunk.js"
+    "static/js/2.45ee0387.chunk.js",
+    "static/css/main.228ed638.chunk.css",
+    "static/js/main.12e14255.chunk.js"
   ]
 }
