@@ -6,7 +6,7 @@ const HeroList = ({ heros, onDelete }) => (
   <List>
     {heros.map(({ _id, nickname, images }) => {
       return (
-        <Link key={_id} to={`/${_id}}`}>
+        <Link key={_id} to={`/superhero-application/heros/${_id}`}>
           <Hero
             id={_id}
             nickname={nickname}

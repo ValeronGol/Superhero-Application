@@ -12,7 +12,7 @@ const HerosPagination = () => {
 
   return (
     <Container>
-      {isLoading && <div>Loading...</div>}{' '}
+      {isLoading && <div>Loading...</div>}
       {isError && <div>Error: {error.message}</div>}
       {data && <HeroList heros={data} onDelete={deleteHero} />}
       <Btn

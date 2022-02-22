@@ -1,6 +1,5 @@
 import { useQuery } from 'react-query';
 import { useRef } from 'react';
-
 import toast from 'react-hot-toast';
 import { fetchHeros } from 'helpers/fetchHeros';
 

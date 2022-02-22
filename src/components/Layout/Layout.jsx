@@ -5,9 +5,13 @@ export default function Layout() {
   return (
     <>
       <header>
-        <CustomLink to="/">Home</CustomLink>
-        <CustomLink to="/list">Superhero List</CustomLink>
-        <CustomLink to="/form">Superhero Create</CustomLink>
+        <CustomLink to="/superhero-application/">Home</CustomLink>
+        <CustomLink to="/superhero-application/heros">
+          Superhero List
+        </CustomLink>
+        <CustomLink to="/superhero-application/form">
+          Superhero Create
+        </CustomLink>
       </header>
       <div>
         <Outlet />
