@@ -21,7 +21,14 @@ export default function HeroForm() {
 
   return (
     <Formik
-      initialValues={{ nickname: '', images: '' }}
+      initialValues={{
+        nickname: '',
+        real_name: '',
+        origin_description: '',
+        superpowers: '',
+        catch_phrase: '',
+        images: '',
+      }}
       validationSchema={validationSchema}
       onSubmit={(values, { resetForm }) => {
         createHero(values);
@@ -35,6 +42,18 @@ export default function HeroForm() {
           <ErrorMessage name="nickname">
             {msg => <ErrorName>{msg}</ErrorName>}
           </ErrorMessage>
+          <Label htmlFor="real_name">real_name</Label>
+          <Input name="real_name" type="text" />
+
+          <Label htmlFor="origin_description">origin_description</Label>
+          <Input name="origin_description" type="text" />
+
+          <Label htmlFor="superpowers">superpowers</Label>
+          <Input name="superpowers" type="text" />
+
+          <Label htmlFor="catch_phrase">catch_phrase</Label>
+          <Input name="catch_phrase" type="text" />
+
           <Label htmlFor="images">images URL</Label>
           <Input name="images" type="text" />
           <ErrorMessage name="images">

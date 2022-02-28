@@ -25,8 +25,7 @@ export const Input = styled(Field)`
 
 export const ErrorName = styled.div`
   position: absolute;
-  top: 195px;
-  font-family: ${props => props.theme.fontFamily};
+  top: 255px;
   font-weight: 400;
   font-size: 10px;
   line-height: 1.2;
@@ -40,8 +39,7 @@ export const ErrorName = styled.div`
 `;
 export const ErrorImg = styled.div`
   position: absolute;
-  top: 265px;
-  font-family: ${props => props.theme.fontFamily};
+  top: 610px;
   font-weight: 400;
   font-size: 10px;
   line-height: 1.2;
