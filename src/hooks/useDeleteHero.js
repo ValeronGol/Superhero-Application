@@ -1,15 +1,10 @@
-import axios from 'axios';
-import toast from 'react-hot-toast';
+import { removeSuperhero } from '../helpers/fetchHeros';
 import { useMutation, useQueryClient } from 'react-query';
-
-const deleteHero = async id => {
-  const resp = await axios.delete(`/superhero/${id}`);
-  return resp.data.data.result;
-};
+import toast from 'react-hot-toast';
 
 export const useDeleteHero = () => {
   const queryClient = useQueryClient();
-  const { mutateAsync } = useMutation(deleteHero, {
+  const { mutateAsync } = useMutation(removeSuperhero, {
     onSuccess() {
       queryClient.invalidateQueries('/heros');
       toast.success('Hero deleted');

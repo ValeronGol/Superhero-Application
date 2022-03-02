@@ -1,10 +1,13 @@
 import { useParams } from 'react-router';
 import { useFetchHeroById } from 'hooks/useFetchHeroById';
+import { useUpdateHeroById } from 'hooks/useUpdateHeroById';
 import Hero from 'components/Hero/Hero';
+import Btn from 'components/Btn/Btn';
 
 const SuperHero = () => {
   const { id } = useParams();
   const { isLoading, data } = useFetchHeroById(id);
+  const { updateHero } = useUpdateHeroById();
 
   return (
     <div>
@@ -19,6 +22,7 @@ const SuperHero = () => {
           catch_phrase={data.catch_phrase}
         />
       )}
+      <Btn text="Update" onClick={() => updateHero(id)} />
     </div>
   );
 };

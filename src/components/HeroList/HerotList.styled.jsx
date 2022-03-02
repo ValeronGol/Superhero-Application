@@ -4,6 +4,11 @@ export const List = styled.ul`
   padding: 10px;
   margin: 0;
 `;
+
+export const Item = styled.li`
+  padding: 10px;
+`;
+
 export const Img = styled.img`
   width: 100%;
   height: 260px;

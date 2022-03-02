@@ -1,5 +1,4 @@
-import { Conteiner, Info, Img } from './Hero.styled';
-import Btn from 'components/Btn/Btn';
+import { Container, List, Item, Info, Img } from './Hero.styled';
 
 const Hero = ({
   nickname,
@@ -10,17 +9,26 @@ const Hero = ({
   catch_phrase,
   onUpdate,
 }) => (
-  <Conteiner>
-    <Info>
-      {`${nickname}`}
-      {`${real_name}`}
-      {`${origin_description}`}
-      {`${superpowers}`}
-      {`${catch_phrase}`}
-      <Img src={images} alt={nickname} />
-    </Info>
-    <Btn text="Update" onClick={onUpdate} />
-  </Conteiner>
+  <Container>
+    <Img src={images} alt={nickname} />
+    <List>
+      <Item>
+        nickname: <Info>{`${nickname}`}</Info>
+      </Item>
+      <Item>
+        real name: <Info>{`${real_name}`}</Info>
+      </Item>
+      <Item>
+        origin description: <Info>{`${origin_description}`}</Info>
+      </Item>
+      <Item>
+        superpowers: <Info>{`${superpowers}`}</Info>
+      </Item>
+      <Item>
+        catch phrase: <Info>{`${catch_phrase}`}</Info>
+      </Item>
+    </List>
+  </Container>
 );
 
 export default Hero;

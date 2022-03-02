@@ -28,7 +28,7 @@ const HerosPagination = () => {
         onClick={() => {
           setPage(old => old + 1);
         }}
-      />{' '}
+      />
       {isFetching ? <span> Loading...</span> : null}
     </Container>
   );

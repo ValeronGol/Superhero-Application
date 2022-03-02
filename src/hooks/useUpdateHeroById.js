@@ -1,16 +1,16 @@
+import { updateSuperherotById } from '../helpers/fetchHeros';
 import { useMutation, useQueryClient } from 'react-query';
-import { createHero } from '../helpers/fetchHeros';
 import toast from 'react-hot-toast';
 
-export const useCreateHero = () => {
+export const useUpdateHeroById = () => {
   const queryClient = useQueryClient();
-  const { mutateAsync } = useMutation(createHero, {
+  const { mutateAsync } = useMutation(updateSuperherotById, {
     onSuccess() {
       queryClient.invalidateQueries('/heros');
-      toast.success('Hero create');
+      toast.success('Hero update');
     },
   });
   return {
-    createHero: mutateAsync,
+    updateHero: mutateAsync,
   };
 };

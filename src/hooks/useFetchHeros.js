@@ -1,14 +1,14 @@
 import { useQuery } from 'react-query';
 import { useRef } from 'react';
 import toast from 'react-hot-toast';
-import { fetchHeros } from 'helpers/fetchHeros';
+import { listSuperhero } from 'helpers/fetchHeros';
 
 export const useFetchHeros = page => {
   const hasFetched = useRef(false);
 
   const { isLoading, data, isError, error, isFetching } = useQuery(
     ['/heros', page],
-    () => fetchHeros(page),
+    () => listSuperhero(page),
     {
       keepPreviousData: true,
       onSuccess() {
