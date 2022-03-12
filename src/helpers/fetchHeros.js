@@ -17,8 +17,8 @@ export const removeSuperhero = async id => {
   return data.data.result;
 };
 
-export const updateSuperherotById = async (id, updateHero) => {
-  const { data } = await axios.put(`/superhero/${id}`, updateHero);
+export const updateSuperherotById = async updateHero => {
+  const { data } = await axios.put(`/superhero/${updateHero.id}`, updateHero);
   return data.data;
 };
 

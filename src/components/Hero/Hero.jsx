@@ -7,7 +7,6 @@ const Hero = ({
   origin_description,
   superpowers,
   catch_phrase,
-  onUpdate,
 }) => (
   <Container>
     <Img src={images} alt={nickname} />
