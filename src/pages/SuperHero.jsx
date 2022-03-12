@@ -8,17 +8,7 @@ const SuperHero = () => {
   return (
     <div>
       {isLoading && <div>Loading...</div>}
-      {data && (
-        // <Hero
-        //   nickname={data.nickname}
-        //   images={data.images}
-        //   real_name={data.real_name}
-        //   origin_description={data.origin_description}
-        //   superpowers={data.superpowers}
-        //   catch_phrase={data.catch_phrase}
-        // />
-        <HeroFormbyUpdate hero={data} />
-      )}
+      {data && <HeroFormbyUpdate hero={data} />}
     </div>
   );
 };
