@@ -2,9 +2,9 @@ import styled from '@emotion/styled';
 import AutosizeInput from 'react-input-autosize';
 
 export const Form = styled.form`
-  margin-left: auto;
-  margin-right: auto;
   display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 export const Box = styled.div`
   display: flex;
@@ -47,6 +47,4 @@ export const Img = styled.img`
 export const Boxbtn = styled.div`
   position: absolute;
   top: 350px;
-  bottom: -80px;
-  left: 335px;
 `;

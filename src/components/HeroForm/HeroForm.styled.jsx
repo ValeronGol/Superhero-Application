@@ -3,12 +3,14 @@ import { Field, Form } from 'formik';
 
 export const ConteinerForm = styled(Form)`
   width: 300px;
+  margin: auto;
   padding: 20px;
   border: 1px solid #477405;
 `;
 
 export const Label = styled.label`
   display: flex;
+  align-items: flex-start;
   flex-direction: column;
   max-width: 200px;
   padding-top: 15px;
@@ -16,6 +18,7 @@ export const Label = styled.label`
 `;
 
 export const Input = styled(Field)`
+  width: 255px;
   border-radius: 2px;
   &:focus {
     border-color: #4015fffb;
@@ -26,6 +29,7 @@ export const Input = styled(Field)`
 export const ErrorName = styled.div`
   position: absolute;
   top: 255px;
+  left: 690px;
   font-weight: 400;
   font-size: 10px;
   line-height: 1.2;
@@ -40,6 +44,7 @@ export const ErrorName = styled.div`
 export const ErrorImg = styled.div`
   position: absolute;
   top: 610px;
+  left: 690px;
   font-weight: 400;
   font-size: 10px;
   line-height: 1.2;
